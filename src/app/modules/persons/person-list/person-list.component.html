@@ -2,7 +2,7 @@
   <div class="row py-4">
     <div class="col-3">
       <div class="form-group">
-        <ng-select [placeholder]="'Filtrar pessoa'" (change)="filterUsers()" [(ngModel)]="query.selectedOption"
+        <ng-select [placeholder]="'Filtrar pessoa'" (change)="filterPersons()" [(ngModel)]="query.selectedOption"
           class="full-width with-shadow">
           <ng-option [value]="null"></ng-option>
           <ng-option *ngFor="let option of options | keyvalue" [value]="option.value">{{option.value}}</ng-option>
@@ -12,7 +12,7 @@
 
     <div class="col-3">
       <div class="form-group">
-        <button class="btn btn-success" class="btn btn-primary" [routerLink]="['create']">Adicionar pessoa </button>
+        <button class="btn btn-success" class="btn btn-primary" [routerLink]="['create']">Adicionar pessoa</button>
       </div>
     </div>
   </div>
@@ -31,15 +31,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{user.name}}</td>
-        <td [class.text-danger]="user.elderly">{{user.age}}</td>
-        <td>{{user.gender}}</td>
-        <td>{{user.weight}}</td>
-        <td>{{user.height}}</td>
-        <td><input disabled type="checkbox" [checked]="user.elderly"></td>
-        <td><a [routerLink]="['edit', user.id]"> <i class="fas fa-edit" style="color: black;"></i></a></td>
-        <td><a (click)="deleteUser(user)"> <i class="fas fa-trash-alt" style="color: red"></i></a></td>
+      <tr *ngFor="let person of persons">
+        <td>{{person.name}}</td>
+        <td [class.text-danger]="person.elderly">{{person.age}}</td>
+        <td>{{person.gender}}</td>
+        <td>{{person.weight}}</td>
+        <td>{{person.height}}</td>
+        <td><input disabled type="checkbox" [checked]="person.elderly"></td>
+        <td><a [routerLink]="['edit', person.id]"> <i class="fas fa-edit" style="color: black;"></i></a></td>
+        <td><a (click)="delete(person)"> <i class="fas fa-trash-alt" style="color: red"></i></a></td>
       </tr>
     </tbody>
   </table>

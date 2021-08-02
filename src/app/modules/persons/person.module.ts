@@ -1,18 +1,18 @@
-import { UserListComponent } from './user-list/user-list.component';
+import { PersonListComponent } from './person-list/person-list.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { UserRoutingModule } from './user-routing.module';
-import { UserFormComponent } from './user-form/user-form.component';
+import { PersonRoutingModule } from './person-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { PersonFormComponent } from './person-form/person-form.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    UserRoutingModule,
+    PersonRoutingModule,
     HttpClientModule,
     NgSelectModule,
     FormsModule,
@@ -20,8 +20,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
   ],
 
   declarations: [
-    UserFormComponent,
-    UserListComponent
+    PersonFormComponent,
+    PersonListComponent
   ],
 })
-export class UserModule { }
+export class PersonModule { }

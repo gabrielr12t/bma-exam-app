@@ -1,6 +1,6 @@
-import { User } from './../../models/users/user';
+import { Person } from '../../models/persons/person';
 
-export class UserViewModel {
+export class PersonViewModel {
   public id: number;
   public name: string;
   public age: number;
@@ -21,16 +21,16 @@ export class UserViewModel {
     this.height = height;
   }
 
-  static createFromModel(user: User) {
-    if (!user)
-      return user;
+  static createFromModel(person: Person) {
+    if (!person)
+      return person;
 
-    const model = new UserViewModel(user.id, user.name, user.age, user.gender, user.weight, user.height);
+    const model = new PersonViewModel(person.id, person.name, person.age, person.gender, person.weight, person.height);
     return model;
   }
 
   static createFromProperties(id: number, name: string, age: number, gender: string, weight: number, height: number) {
-    const model = new UserViewModel(id, name, age, gender, weight, height);
+    const model = new PersonViewModel(id, name, age, gender, weight, height);
     return model;
   }
 }

@@ -29,17 +29,17 @@
   </div>
   <div class="form-row">
     <div class="col-md-2">
-      <button type="sumit" (click)="save()" class="btn btn-primary">Salvar</button>
+      <button type="sumit" (click)="savePerson()" class="btn btn-primary">Salvar</button>
     </div>
     <div class="col-md-2">
-      <button [routerLink]="['/users']" type="button" class="btn btn-default">Cancelar</button>
+      <button [routerLink]="['/persons']" type="button" class="btn btn-default">Cancelar</button>
     </div>
   </div>
 
   <div class="form-row pt-4" *ngIf="hasErrors">
     <div class="col-md-12 mb-3">
       <div class="alert alert-danger" role="alert">
-        Preencha todos os campos para continuar
+        {{ errorMessageCustom }}
       </div>
     </div>
   </div>
