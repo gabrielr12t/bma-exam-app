@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col-3">
+      <div class="form-group">
+        <ng-select [placeholder]="'Filtrar pessoa'" (change)="filterUsers()" [(ngModel)]="query.selectedOption" class="full-width with-shadow">
+          <ng-option [value]="null"></ng-option>
+          <ng-option *ngFor="let option of options | keyvalue" [value]="option.value">{{option.value}}</ng-option>
+        </ng-select>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="form-group">
+        <button class="btn btn-success" class="btn btn-primary" [routerLink]="['create']">Adicionar pessoa </button>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Sexo</th>
+        <th>Peso (kg)</th>
+        <th>altura</th>
+        <th>Idoso</th>
+        <th>Editar</th>
+        <th>Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.weight}}</td>
+        <td>{{user.height}}</td>
+        <td>{{user.elderly}}</td>
+        <td><a [routerLink]="['edit', user.id]"> <i class="fas fa-edit" style="color: black;"></i></a></td>
+        <td><a (click)="deleteUser(user)"> <i class="fas fa-trash-alt" style="color: red"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

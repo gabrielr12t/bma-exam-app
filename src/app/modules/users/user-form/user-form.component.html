@@ -1,0 +1,95 @@
+<!-- <form class="needs-validation" novalidate [formGroup]="form" style="padding-top: 10px">
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="name" placeholder="Nome" formControlName="name" />
+      <div class="invalid-feedback" *ngIf="hasError('name') && hasError('name')!['required']">
+        Por favor informe um nome.
+      </div>
+      <div class="invalid-feedback" *ngIf="hasError('name') && hasError('name')!['minlength']">
+        Nome precisa ter no mínimo {{ hasError('name')!['minlength'].requiredLength }} caracteres.
+      </div>
+      <div class="invalid-feedback" *ngIf="hasError('name') && hasError('name')!['maxlength']">
+        Nome precisa ter no máximo {{ hasError('name')!['maxlength'].requiredLength }} caracteres.
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <label for="age">Idade</label>
+      <input type="number" class="form-control" id="age" placeholder="Idade" formControlName="age" />
+      <div class="invalid-feedback" *ngIf="hasError('age') && hasError('age')!['required']">
+        Por favor informe uma idade.
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <label for="gender">Sexo</label>
+      <input type="text" class="form-control" id="gender" placeholder="Sexo" formControlName="gender" />
+      <div class="invalid-feedback" *ngIf="hasError('gender') && hasError('gender')!['required']">
+        Por favor informe o sexo.
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <label for="weight">Peso (KG)</label>
+      <input type="number" class="form-control" id="weight" placeholder="Peso" formControlName="weight" />
+      <div class="invalid-feedback" *ngIf="hasError('weight') && hasError('weight')!['required']">
+        Por favor informe seu peso.
+      </div>
+    </div>
+  </div>
+
+  <div class="row pt-3">
+    <div class="col-sm-3">
+      <label for="weight">Peso (KG)</label>
+      <input type="number" class="form-control" id="weight" placeholder="Peso" formControlName="weight" />
+      <div class="invalid-feedback" *ngIf="hasError('weight') && hasError('weight')!['required']">
+        Por favor informe seu peso.
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 10px">
+    <button type="sumit" class="btn btn-primary">Salvar</button>
+    <button [routerLink]="['/users']" type="button" class="btn btn-default">Cancelar</button>
+  </div>
+</form> -->
+
+<form>
+  <div class="form-row pt-4">
+    <div class="col-md-11 mb-3">
+      <label for="validationDefault01">First name</label>
+      <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
+    </div>
+    <div class="col-md-11 mb-3">
+      <label for="validationDefault02">Last name</label>
+      <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationDefault03">City</label>
+      <input type="text" class="form-control" id="validationDefault03" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault04">State</label>
+      <select class="custom-select" id="validationDefault04" required>
+        <option selected disabled value="">Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault05">Zip</label>
+      <input type="text" class="form-control" id="validationDefault05" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="form-check-label" for="invalidCheck2">
+        Agree to terms and conditions
+      </label>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
