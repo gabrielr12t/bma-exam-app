@@ -32,7 +32,7 @@ export class PersonListComponent implements OnInit {
   }
 
   public delete(person: Person) {
-    if (confirm(`Deseja excluir o usuário ${person.name}`)) {
+    if (confirm(`Deseja excluir a pessoa ${person.name}`)) {
       this.personService.delete(person.id)
         .subscribe(response => {
           if (response)

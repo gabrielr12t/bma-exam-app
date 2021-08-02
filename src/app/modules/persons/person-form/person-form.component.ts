@@ -41,25 +41,25 @@ export class PersonFormComponent implements OnInit {
   ngOnInit(): void { }
 
   public savePerson() {
-    //if (this.form.valid) {
+    if (this.form.valid) {
       this.personService.save(this.form.value).subscribe(
         response => {
+          this.hasErrors = false;
+
           if (response)
             this.location.back();
           else
             this.hasErrors = true;
         },
         error => {
-          debugger
-          let errorRespose = error as HttpErrorResponse;
-          if(errorRespose){
-            var teste = Array.from(errorRespose.error.errors)
+          if (error.error) {
+            this.errorMessageCustom = error.error.join("\r\n");
+            this.hasErrors = true;
           }
-          //let errors = Array.from(error.errors).map(p => p['name'])
         }
       );
-    //} else {
-      //this.hasErrors = true;
-    //}
+    } else {
+      this.hasErrors = true;
+    }
   }
 }
