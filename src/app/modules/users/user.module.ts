@@ -1,4 +1,3 @@
-import { UserHandlerComponent } from './user-handler/user-handler.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -22,8 +21,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
   declarations: [
     UserFormComponent,
-    UserListComponent,
-    UserHandlerComponent
+    UserListComponent
   ],
 })
 export class UserModule { }

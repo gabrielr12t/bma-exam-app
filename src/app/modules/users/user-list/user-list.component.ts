@@ -31,10 +31,6 @@ export class UserListComponent implements OnInit {
       .subscribe(response => { this.users = response.map(model => UserViewModel.createFromModel(model)) });
   }
 
-  public editUser(id: number) {
-
-  }
-
   public deleteUser(user: User) {
     if (confirm(`Deseja excluir o usuário ${user.name}`)) {
       this.userService.delete(user.id)

@@ -16,7 +16,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   public create(command: User): Observable<boolean> {
-    return this.http.put<boolean>(`${this.api}`, command);
+    return this.http.post<boolean>(`${this.api}`, command);
   }
 
   public update(command: User): Observable<boolean> {

@@ -2,7 +2,8 @@
   <div class="row py-4">
     <div class="col-3">
       <div class="form-group">
-        <ng-select [placeholder]="'Filtrar pessoa'" (change)="filterUsers()" [(ngModel)]="query.selectedOption" class="full-width with-shadow">
+        <ng-select [placeholder]="'Filtrar pessoa'" (change)="filterUsers()" [(ngModel)]="query.selectedOption"
+          class="full-width with-shadow">
           <ng-option [value]="null"></ng-option>
           <ng-option *ngFor="let option of options | keyvalue" [value]="option.value">{{option.value}}</ng-option>
         </ng-select>
@@ -32,11 +33,11 @@
     <tbody>
       <tr *ngFor="let user of users">
         <td>{{user.name}}</td>
-        <td>{{user.age}}</td>
+        <td [class.text-danger]="user.elderly">{{user.age}}</td>
         <td>{{user.gender}}</td>
         <td>{{user.weight}}</td>
         <td>{{user.height}}</td>
-        <td>{{user.elderly}}</td>
+        <td><input disabled type="checkbox" [checked]="user.elderly"></td>
         <td><a [routerLink]="['edit', user.id]"> <i class="fas fa-edit" style="color: black;"></i></a></td>
         <td><a (click)="deleteUser(user)"> <i class="fas fa-trash-alt" style="color: red"></i></a></td>
       </tr>

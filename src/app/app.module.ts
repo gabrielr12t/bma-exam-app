@@ -7,7 +7,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './modules/users/user-list/user-list.component';
-import { UserHandlerComponent } from './modules/users/user-handler/user-handler.component';
 import { UserModule } from './modules/users/user.module';
 
 @NgModule({
